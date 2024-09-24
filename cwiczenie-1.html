@@ -24,7 +24,7 @@
 		function getDayName()
 		{
 			var wynik = document.getElementById("wynik");
-			var number = document.getElementById("numInput").value;
+			var number = parseInt(document.getElementById("numInput").value); // tu był problem ze typem zmiennej
 			console.log(number);
 			switch(number){
 				case 1:
