@@ -17,7 +17,12 @@
 
 	<input type="submit" value="Informacje o liczbach" onclick="matematyka()">
 
-	<div id="wynik"></div>
+	<div id="wynik">
+		<p id="p1"> </p>
+		<p id="p2"> </p>
+		<p id="p3"> </p>
+		<p id="p4"> </p>
+	</div>
 	
 	<script>
 	
@@ -26,8 +31,51 @@
 			var a = document.getElementById('a').value;
 			var b = document.getElementById('b').value;
 			var c = document.getElementById('c').value;
+			var p1 = document.getElementById("p1");
+			var p2 = document.getElementById("p2");
+			var p3 = document.getElementById("p3");
+			var p4 = document.getElementById("p4");
 			
-			
+			p1.innerHTML = getLowest(a,b,c);
+			p2.innerHTML = getHighest(a,b,c);
+			p3.innerHTML = `Moduł z a: ${modul(a)} <br>Moduł z b: ${modul(b)} <br>Moduł z c: ${modul(c)}`;
+			p4.innerHTML = `${isEven(a)}<br>${isEven(b)}<br>${isEven(c)}`
+
+		}
+		function getHighest(a,b,c){
+			var w;
+			if(a>b){
+				if(a>c) w = a;
+				else w = c;
+			}
+			else{
+				if(b>c) w = b;
+				else w = c
+			}
+			return "Największa liczba to: "+w;
+		}
+
+		function getLowest(a,b,c){
+			var w;
+			if(a<b){
+				if(a<c) w = a;
+				else w = c;
+			}
+			else{
+				if(b<c) w = b;
+				else w = c
+			}
+			return "Najmniejsza liczba to: "+w;
+		}
+
+		function modul(x){
+			if(x>=0) return x;
+			else return -x;
+		}
+		
+		function isEven(x){
+			if(x % 2 == 0) return "Liczba "+x+" jest parzysta";
+			else return "Liczba "+x+" jest nieparzysta";
 		}
 
 	</script>

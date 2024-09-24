@@ -21,8 +21,18 @@
 	
 		function ktora_cwiartka()
 		{
-			
-			
+			var x = document.getElementById("x").value;
+			var y = document.getElementById("y").value;
+			var wynik = document.getElementById("wynik");
+			var biografia = "<b>Kartezjusz</b> <br>ur. 31 marca 1596 w La Haye en Touraine, zm. 11 lutego 1650 w Sztokholmie <br>francuski uczony: matematyk, fizyk i filozof, jeden z najwybitniejszych intelektualistów XVII wieku, uznawany również za ojca filozofii nowożytnej";
+
+			if(x == 15 && y == 96) wynik.innerHTML = biografia;
+			else if(x >=0 && y >= 0) wynik.innerHTML = `Punkt P=(${x},${y}) jest na ćwiartce 1`;
+			else if(x >=0 && y <= 0) wynik.innerHTML = `Punkt P=(${x},${y}) jest na ćwiartce 2`;
+			else if(x <=0 && y <= 0) wynik.innerHTML = `Punkt P=(${x},${y}) jest na ćwiartce 3`;
+			else if(x <=0 && y >= 0) wynik.innerHTML = `Punkt P=(${x},${y}) jest na ćwiartce 4`;
+			else if(x ==0 || y == 0) wynik.innerHTML = `Punkt leży na jednej z osi układu`;
+			else if(x == 0 && y == 0) wynik.innerHTML = `Punkt P=(${x},${y}) jest początkiem układu współrzędnych`;
 		}
 
 	</script>

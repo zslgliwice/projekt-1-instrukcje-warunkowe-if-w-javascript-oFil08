@@ -22,8 +22,25 @@
 	
 		function sprawdz()
 		{
-			
-			
+			var imie = document.getElementById("imie").value;
+			var wiek = document.getElementById("wiek").value;
+			wynik = document.getElementById("wynik");
+			if(imie == "Brad" || imie == "Morgan"){
+				wynik.innerHTML = "Może wziąć udział za 0zł.";
+				exit;
+			}
+			if(wiek<16){
+				wynik.innerHTML = "Nie może wziąć udziału."
+				exit;
+			}
+			if(wiek>=16 && wiek <=17){
+				wynik.innerHTML = "Może wziąć udział, jeśli jest z opiekunem za 12zł"
+				exit;
+			}
+			if(wiek>=18){
+				wynik.innerHTML = "Może wziąć udział za 18zł."
+				exit;
+			}
 		}
 
 	</script>
